@@ -39,7 +39,7 @@ def classic_example_1(n, m):
 
     for i in range(n):
         for j in range(m):
-            print(i + 1, j + 1, '=', (i + 1) * (j + 1))
+            print(i + 1, '*', j + 1, '=', (i + 1) * (j + 1))
         print()
 
 
@@ -61,7 +61,7 @@ def classic_example_2(n):
 
     for i in range(n):  # The ONLY difference from the previous
         for j in range(i + 1):  # example is   i+1   on this line.
-            print(i + 1, j + 1, '=', (i + 1) * (j + 1))
+            print(i + 1, '*', j + 1, '=', (i + 1) * (j + 1))
         print()
 
 
