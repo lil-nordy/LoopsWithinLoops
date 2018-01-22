@@ -111,6 +111,7 @@ def sequence_of_sequence_example2(sequence_of_lists):
     for j in range(len(sequence_of_lists)):
         for k in range(len(sequence_of_lists[j])):
             sequence_of_lists[j][k] = sequence_of_lists[j][k] * (j + 1)
+            # sequence_of_lists[j][k] *= (j + 1)
 
 
 # ----------------------------------------------------------------------
