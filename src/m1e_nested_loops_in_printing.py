@@ -33,7 +33,7 @@ def classic_example_1(n, m):
     # ------------------------------------------------------------------
     print()
     print('-----------------------------------------------------------')
-    header = 'Complete multiplication table for 1 x 1 through'
+    header = 'EXAMPLE 1: Complete multiplication table for 1 x 1 through'
     print(header, n, 'x', m)
     print('-----------------------------------------------------------')
 
@@ -55,7 +55,7 @@ def classic_example_2(n):
     # ------------------------------------------------------------------
     print()
     print('-----------------------------------------------------------')
-    header = 'Partial multiplication table for 1 x 1 through'
+    header = 'EXAMPLE 2: Partial multiplication table for 1 x 1 through'
     print(header, n, 'x', n)
     print('-----------------------------------------------------------')
 
@@ -80,7 +80,7 @@ def classic_example_3(n, m):
     # ------------------------------------------------------------------
     print()
     print('-----------------------------------------------------------')
-    header = 'Complete multiplication table for 1 x 1 through'
+    header = 'EXAMPLE 3: Complete multiplication table for 1 x 1 through'
     print(header, n, 'x', m)
     print('but with just products shown')
     print('-----------------------------------------------------------')
