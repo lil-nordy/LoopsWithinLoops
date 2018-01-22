@@ -11,13 +11,14 @@ def main():
     """ Calls the other functions to test them. """
     # run_test_rectangle_of_stars()
     # run_test_triangle_of_stars()
-    run_test_decreasing_exclamation_marks()
-    # run_test_alternating_brackets()
+    # run_test_decreasing_exclamation_marks()
+    run_test_alternating_brackets()
     # run_test_triangle_same_number_in_each_row()
     # run_test_triangle_all_numbers_in_each_row()
 
 
 def run_test_rectangle_of_stars():
+
     """ Tests the    rectangle_of_stars    function. """
     print()
     print('--------------------------------------------')
@@ -71,11 +72,12 @@ def rectangle_of_stars(r, c):
     #         print('*', end='')
     #     print()
 
+
 def run_test_triangle_of_stars():
     """ Tests the    triangle_of_stars    function. """
     print()
     print('-------------------------------------------')
-    print('Testing the   TRIANGLE_OF_STARS   function:')
+    print('Testing the   TRIANGLE_OF_STARS   function: (upwards pointing)')
     print('-------------------------------------------')
 
     print('Test 1 of triangle_of_stars: (5)')
@@ -124,6 +126,7 @@ def triangle_of_stars(r):
     #   in this or the other problems in this module, as doing so
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    # points upwards!
     for k in range(r):
         for _ in range(k + 1):
             print('*', end='')
@@ -145,6 +148,7 @@ def run_test_decreasing_exclamation_marks():
 
     print('Test 3 of decreasing_exclamation_marks: (4, 4)')
     decreasing_exclamation_marks(4, 4)
+    print("     (the above should have been blank)")
 
     print('Test 4 of decreasing_exclamation_marks: (8, 6)')
     decreasing_exclamation_marks(8, 6)
@@ -170,11 +174,21 @@ def decreasing_exclamation_marks(m, n):
     #   in this or the other problems in this module, as doing so
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
-    for k in range(n):
+    for k in range(m - n + 1):
         for j in range(m - k):
             print('!', end='')
         print()
-    thing = rg.Rectangle()
+    # alternative, less intuitive
+    # for k in range(n):
+    #     for j in range(m - k):
+    #         print('!', end='')
+    #     print()
+    # The banned string multiplication:
+    # for k in range(m, n, -1):
+    #     print('!' * k)
+    #     print()
+
+
 def run_test_alternating_brackets():
     """ Tests the    alternating_brackets    function. """
     print()
@@ -215,6 +229,15 @@ def alternating_brackets(m, n):
     #   in this or the other problems in this module, as doing so
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    for k in range(m - n + 1):
+        for i in range(m - k):
+            line = ''
+            if i % 2 == 0:
+                line += '['
+            else:
+                line += ']'
+            print(line)
+        print()
 
 
 def run_test_triangle_same_number_in_each_row():
@@ -250,7 +273,7 @@ def triangle_same_number_in_each_row(r):
     Precondition:  r is a non-negative integer.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -258,6 +281,10 @@ def triangle_same_number_in_each_row(r):
     #   in this or the other problems in this module, as doing so
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    for k in range(r):
+        for i in range(k):
+            print(k, end ='')
+        print()
 
 
 def run_test_triangle_all_numbers_in_each_row():
@@ -293,7 +320,7 @@ def triangle_all_numbers_in_each_row(r):
     Precondition:  r is a non-negative integer.
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -301,6 +328,10 @@ def triangle_all_numbers_in_each_row(r):
     #   in this or the other problems in this module, as doing so
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    for k in range(r):
+        for i in range(k):
+            print((i + 1), end='')
+        print()
 
 
 # ----------------------------------------------------------------------
