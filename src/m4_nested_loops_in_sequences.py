@@ -3,16 +3,16 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Nathaniel Neil Nate Nordquist.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
     """ Calls the other functions to test them. """
     run_test_multiply_numbers()
-    run_test_sum_numbers()
-    run_test_print_characters()
-    run_test_print_characters_slanted()
+    # run_test_sum_numbers()
+    # run_test_print_characters()
+    # run_test_print_characters_slanted()
 
 
 def run_test_multiply_numbers():
@@ -117,7 +117,7 @@ def multiply_numbers(sequence_of_lists):
        [FYI: This 'can be multiplied ...' is an example of DUCK TYPING.]
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     #
@@ -128,7 +128,9 @@ def multiply_numbers(sequence_of_lists):
     #             to loop through it in the INNER loop.
     #        -- See   m2e_nested_loops_in_sequences   as needed.
     # ------------------------------------------------------------------
-
+    for k in range(len(sequence_of_lists)):
+        for i in range(len(sequence_of_lists[k])):
+            sequence_of_lists[k][i] *= (k + 1)
 
 def run_test_sum_numbers():
     """ Tests the    sum_numbers    function. """
