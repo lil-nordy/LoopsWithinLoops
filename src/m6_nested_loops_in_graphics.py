@@ -160,15 +160,15 @@ def draw_wall_on_right(rectangle, n, window):
     # ----------------------------------------------------------------
     center1_x = rectangle.get_center().x
     center1_y = rectangle.get_center().y
-    height1 = rectangle.get_height()
-    width1 = rectangle.get_width()
-    corner1 = rg.Point(center1_x - width1 / 2, center1_y - height1 / 2)
-    corner2 = rg.Point(center1_x + width1 / 2, center1_y + height1 / 2)
+    height = rectangle.get_height()
+    width = rectangle.get_width()
+    corner1 = rg.Point(center1_x - width / 2, center1_y - height / 2)
+    corner2 = rg.Point(center1_x + width / 2, center1_y + height / 2)
 
     for i in range(n):
         for k in range(i + 1):
-            rectangle1 = rg.Rectangle(rg.Point(corner1.x - k * width1, corner1.y + i * height1),
-                                      rg.Point(corner2.x - k * width1, corner2.y + i * height1))
+            rectangle1 = rg.Rectangle(rg.Point(corner1.x - k * width, corner1.y + i * height),
+                                      rg.Point(corner2.x - k * width, corner2.y + i * height))
             rectangle1.attach_to(window)
 
     window.render()
