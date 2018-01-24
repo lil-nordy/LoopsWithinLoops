@@ -171,6 +171,7 @@ def draw_wall_on_right(rectangle, n, window):
                                       rg.Point(corner2.x - k * width, corner2.y + i * height))
             rectangle1.attach_to(window)
 
+
     window.render()
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
