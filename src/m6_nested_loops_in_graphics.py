@@ -11,7 +11,7 @@ import rosegraphics as rg
 
 def main():
     """ Calls the other functions to demonstrate them. """
-    run_test_draw_L()
+    # run_test_draw_L()
     run_test_draw_wall_on_right()
 
 
@@ -80,16 +80,44 @@ def draw_L(window, circle, r, c):
     and m and n are small, positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
     x_original = circle.center.x
     y_original = circle.center.y
+    radius = circle.radius
 
     x = x_original
     y = y_original
 
-    for k in range()
+    for k in range(r + 3):
+        if k < r:
+            for i in range(3):
+                center = rg.Point(x, y)
+                draw_circle = rg.Circle(center, radius)
+                draw_circle.fill_color = circle.fill_color
+                draw_circle.attach_to(window)
+                window.render()
+                print('First Block:', x, y)
+
+                x += 2 * circle.radius
+            x = x_original
+            y += 2 * circle.radius
+
+        if k > r:
+            for i in range(c + 3):
+                center = rg.Point(x, y)
+                draw_circle = rg.Circle(center, radius)
+                draw_circle.fill_color = circle.fill_color
+                draw_circle.attach_to(window)
+                window.render()
+                print('Second Block:', x, y)
+
+                x += 2 * circle.radius
+            x = x_original
+            y += 2 * circle.radius
+
+
 
 def run_test_draw_wall_on_right():
     """ Tests the    draw_wall_on_right    function. """
@@ -127,10 +155,11 @@ def draw_wall_on_right(rectangle, n, window):
     and n is a small, positive integer.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
-
+    get height
+    get width
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

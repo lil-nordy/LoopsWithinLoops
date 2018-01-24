@@ -9,9 +9,9 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 def main():
     """ Calls the other functions to test them. """
-    # run_test_multiply_numbers()
-    # run_test_sum_numbers()
-    # run_test_print_characters()
+    run_test_multiply_numbers()
+    run_test_sum_numbers()
+    run_test_print_characters()
     run_test_print_characters_slanted()
 
 
@@ -298,7 +298,11 @@ def print_characters_slanted(sequence_of_strings):
         for i in range(len(sequence_of_strings[k])):
             print(' ' * i, sequence_of_strings[k][i])
         print()
-
+    # prints a space between each word, each word on its own line 
+    # for k in range(len(sequence_of_strings)):
+    #     for i in range(len(sequence_of_strings[k])):
+    #         print(' ' * i, sequence_of_strings[k][i], end='')
+    #     print()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
