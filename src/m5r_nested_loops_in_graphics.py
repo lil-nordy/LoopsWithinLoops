@@ -55,7 +55,7 @@ def nested_loops_in_graphics_example():
     window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #  *** Unless your instructor directs you otherwise,
 #      watch the video
 #          nested_loops_in_GRAPHICS.mp4
@@ -108,7 +108,7 @@ def rectangle_of_circles(window, circle, m, n):
 
 
 # ----------------------------------------------------------------------
-# TODO: 3.
+# done: 3.
 #  *** Unless your instructor directs you otherwise,
 #      watch the video
 #          nested_loops_in_GRAPHICS.mp4
@@ -151,10 +151,10 @@ def triangle_of_circles(window, circle, n):
     original_y = circle.center.y
     radius = circle.radius
 
-    x = original_x
+    x = original_x # remember, original_x is a pointer, which is pointing to the object rectangle.get_center returns.
     y = original_y
-    for j in range(n):  # Loop through the rows
-        for _ in range(j + 1):  # Loop through the columns
+    for k in range(n):  # Loop through the rows
+        for _ in range(k + 1):  # Loop through the columns
             new_circle = rg.Circle(rg.Point(x, y), radius)
             new_circle.attach_to(window.initial_canvas)
             window.render(0.1)

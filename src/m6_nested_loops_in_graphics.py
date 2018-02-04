@@ -12,7 +12,7 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate them. """
     run_test_draw_L()
-    # run_test_draw_wall_on_right()
+    run_test_draw_wall_on_right()
 
 
 def run_test_draw_L():
@@ -90,7 +90,7 @@ def draw_L(window, circle, r, c):
     x = x_original
     y = y_original
 
-    for k in range(r + 3):
+    for k in range(r + 4): # why the hell isn't it r +3???
         if k < r:
             for i in range(3):
                 center = rg.Point(x, y)
@@ -100,9 +100,9 @@ def draw_L(window, circle, r, c):
                 window.render()
                 print('First Block:', x, y)
 
-                x += 2 * circle.radius
-            x = x_original
-            y += 2 * circle.radius
+                x += 2 * circle.radius # moves it over to the new position
+            x = x_original # snaps it back
+            y += 2 * circle.radius # move down a row
 
         if k > r:
             for i in range(c + 3):
@@ -158,20 +158,54 @@ def draw_wall_on_right(rectangle, n, window):
     # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ----------------------------------------------------------------
-    center1_x = rectangle.get_center().x
-    center1_y = rectangle.get_center().y
+    # Third Attempt:
+    # center_x = rectangle.get_center().x
+    # center_y = rectangle.get_center().y
+    # height = rectangle.get_height()
+    # width = rectangle.get_width()
+    # # corner 1; top right, corner 2; bottom left .
+    # corner1 = rg.Point(center_x + width / 2, center_y - height / 2)
+    # corner2 = rg.Point(center_x - width / 2, center_y + height / 2)
+    # for i in range(n):
+    #     for k in range(i + 1):
+    #         rectangle = rg.Rectangle(rg.Point(corner1.x - k * width, corner1.y + i * height),
+    #                                   rg.Point(corner2.x - k * width, corner2.y + i * height))
+    #         rectangle.attach_to(window)
+    #
+    # window.render()
+
+    # Second Attempt: to draw an n x n triangle of rectangles in the shape of an l facing left. a rectangle object (
+    # rectangle) is passed in, an integer (n) is passed in, a window (window) object is passed in.
+    # original_x = rectangle.get_center().x
+    # original_y = rectangle.get_center().y
+    # x = original_x
+    # y = original_y
+    # width = rectangle.get_width()
+    # height = rectangle.get_height()
+    ## corner 1 is upper right, corner 2 is lower left
+    # corner1 = rg.Point(x + width / 2, y - height / 2)
+    # corner2 = rg.Point(x - width / 2, y + height / 2)
+    # for i in range(n): # loop over the rows
+    #     for k in range(i + 1): # loop over the columns: start at 1, go up to n.
+    #         drawn_rectangle = rg.Rectangle(rg.Point(corner1.x - (width * k), y + (height * i)),
+    #                                        rg.Point(corner2.x - (width * k), y + (height * i)))
+    #         rectangle.attach_to(window)
+    # window.render(0.1)
+    center_x = rectangle.get_center().x
+    center_y = rectangle.get_center().y
     height = rectangle.get_height()
     width = rectangle.get_width()
-    corner1 = rg.Point(center1_x + width / 2, center1_y + height / 2)
-    corner2 = rg.Point(center1_x - width / 2, center1_y - height / 2)
+    corner1 = rg.Point(center_x + (width / 2), center_y - (height / 2))
+    corner2 = rg.Point(center_x - (width / 2), center_y + (height / 2))
 
     for i in range(n):
         for k in range(i + 1):
-            rectangle1 = rg.Rectangle(rg.Point(corner1.x - k * width, corner1.y + i * height),
-                                      rg.Point(corner2.x - k * width, corner2.y + i * height))
-            rectangle1.attach_to(window)
-
+            rectangle = rg.Rectangle(rg.Point(corner1.x - (width * k), corner1.y + (height * i)),
+                                     rg.Point(corner2.x - (width * k), corner2.y + (height * i)))
+            rectangle.attach_to(window)
     window.render()
+
+
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------

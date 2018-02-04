@@ -132,7 +132,6 @@ def multiply_numbers(sequence_of_lists):
         for i in range(len(sequence_of_lists[k])):
             sequence_of_lists[k][i] *= (k + 1)
 
-
 def run_test_sum_numbers():
     """ Tests the    sum_numbers    function. """
     # ------------------------------------------------------------------
