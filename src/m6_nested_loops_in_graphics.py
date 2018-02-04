@@ -90,7 +90,7 @@ def draw_L(window, circle, r, c):
     x = x_original
     y = y_original
 
-    for k in range(r + 4): # why the hell isn't it r +3???
+    for k in range(r + 4):  # why the hell isn't it r +3???
         if k < r:
             for i in range(3):
                 center = rg.Point(x, y)
@@ -100,9 +100,9 @@ def draw_L(window, circle, r, c):
                 window.render()
                 print('First Block:', x, y)
 
-                x += 2 * circle.radius # moves it over to the new position
-            x = x_original # snaps it back
-            y += 2 * circle.radius # move down a row
+                x += 2 * circle.radius  # moves it over to the new position
+            x = x_original  # snaps it back
+            y += 2 * circle.radius  # move down a row
 
         if k > r:
             for i in range(c + 3):
@@ -116,7 +116,6 @@ def draw_L(window, circle, r, c):
                 x += 2 * circle.radius
             x = x_original
             y += 2 * circle.radius
-
 
 
 def run_test_draw_wall_on_right():
@@ -154,7 +153,7 @@ def draw_wall_on_right(rectangle, n, window):
       :type window: rg.RoseWindow
     and n is a small, positive integer.
     """
-    #------------------------------------------------------------------
+    # ------------------------------------------------------------------
     # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ----------------------------------------------------------------
